@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Excel Converter - Free Online Tool</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <h1 class="h4 mb-0">PDF to Excel</h1>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#how-it-works">How it Works</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h2 class="hero-title">Convert PDF to Excel Online</h2>
+            <p class="hero-subtitle">Extract tables from PDF files and convert them to Excel format with ease</p>
+
+            <!-- Upload Card -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <form id="uploadForm">
+                                <div class="upload-area" id="dropZone">
+                                    <i class="fa fa-cloud-upload upload-icon"></i>
+                                    <h3 class="h5 mb-3">Drop your PDF file here</h3>
+                                    <p class="text-muted mb-3">or</p>
+                                    <input type="file" id="fileInput" accept=".pdf" class="d-none">
+                                    <button type="button" class="btn btn-primary" id="browseButton">
+                                        Choose File
+                                    </button>
+                                </div>
+
+                                <div id="fileInfo" class="d-none">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-file-pdf-o me-2"></i>
+                                        <span id="fileName"></span>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg" id="convertButton" disabled>
+                                        Convert to Excel
+                                    </button>
+                                    <a href="#" class="btn btn-success btn-lg" id="downloadButton" download style="display: none;">
+                                        <i class="fa fa-download"></i> Download Excel
+                                    </a>
+                                </div>
+
+                                <div id="progressArea" class="mt-4 d-none">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                             role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <div id="errorMessage" class="alert alert-danger mt-3 d-none"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Our Converter?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fa fa-table feature-icon"></i>
+                        <h3 class="h5">Accurate Table Extraction</h3>
+                        <p>Advanced algorithms to precisely detect and extract tables from your PDFs</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fa fa-shield feature-icon"></i>
+                        <h3 class="h5">Secure Processing</h3>
+                        <p>Your files are processed securely and deleted immediately after conversion</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fa fa-rocket feature-icon"></i>
+                        <h3 class="h5">Fast Conversion</h3>
+                        <p>Quick and efficient processing of your PDF files</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="features-section bg-darker">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fa fa-upload feature-icon"></i>
+                        <h3 class="h5">1. Upload</h3>
+                        <p>Select or drag & drop your PDF file</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fa fa-cogs feature-icon"></i>
+                        <h3 class="h5">2. Process</h3>
+                        <p>Our system extracts all tables from your PDF</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fa fa-download feature-icon"></i>
+                        <h3 class="h5">3. Download</h3>
+                        <p>Get your Excel file instantly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
